@@ -1,13 +1,16 @@
 package com.taxas.xaeka.edu;
 
+import lombok.Data;
+
 /**
- * <p>基础标识符</p>
+ * <p>基础转义字符</p>
  * <p>认识一般标识符的用法</p>
  *
  * @author Xaeka
  * @version 1.0
  * @since 2025/11/2 22:49
  */
+@Data
 public class ChangeCharacter {
 
     public static void main(String[] args) {
@@ -45,4 +48,8 @@ public class ChangeCharacter {
         // 三国  罗贯中  70   1000
         System.out.println("书名\t作者\t价格\t销量\n三国\t罗贯中\t70\t1000");
     }
+
+
+    private String CharacterName;
+    private String CharacterCode;
 }
