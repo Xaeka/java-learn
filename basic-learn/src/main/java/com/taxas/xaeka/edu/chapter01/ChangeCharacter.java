@@ -1,4 +1,4 @@
-package com.taxas.xaeka.edu;
+package com.taxas.xaeka.edu.chapter01;
 
 import lombok.Data;
 
