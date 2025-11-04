@@ -9,11 +9,11 @@ package com.taxas.xaeka.edu.chapter03.quiz;
  * @since 2025-11-03 17:25:26
  */
 
-public class quiz01 {
+public class CharDetail {
     // 先写main方法
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int a;
-        a =10086;
+        a = 10086;
         System.out.println(a);
     }
 }
