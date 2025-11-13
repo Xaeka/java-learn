@@ -17,6 +17,7 @@ public class ChangeCharacter {
         // 1.制表位 \t
         System.out.println("北京\t天津\t上海");
         System.out.println("-----------------------");
+
         // 2.换行符 \n
         System.out.println("Taxas\nXaeka\nCoda");
         System.out.println("-----------------------");
