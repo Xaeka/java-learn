@@ -1,4 +1,4 @@
-package com.github.xaeka.javalearn.chapter04;
+package com.github.xaeka.javalearn.chapter04.operator;
 
 /**
  * <p>关系运算符 - 案例演示</p>

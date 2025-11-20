@@ -1,4 +1,4 @@
-package com.github.xaeka.javalearn.chapter04.exercise;
+package com.github.xaeka.javalearn.chapter04.operator.exercise;
 
 /**
  * <p>三元运算符 - 随堂练习</p>

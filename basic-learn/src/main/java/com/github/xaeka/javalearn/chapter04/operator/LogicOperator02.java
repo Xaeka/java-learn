@@ -1,4 +1,4 @@
-package com.github.xaeka.javalearn.chapter04;
+package com.github.xaeka.javalearn.chapter04.operator;
 
 /**
  * <p>逻辑运算符02 - 逻辑或| 跟 短路或|| 的使用</p>

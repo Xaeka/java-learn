@@ -1,4 +1,4 @@
-package com.github.xaeka.javalearn.chapter04;
+package com.github.xaeka.javalearn.chapter04.operator;
 
 /**
  * <p>赋值运算符</p>

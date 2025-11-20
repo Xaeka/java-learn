@@ -1,4 +1,4 @@
-package com.github.xaeka.javalearn.chapter04.exercise;
+package com.github.xaeka.javalearn.chapter04.operator.exercise;
 
 /**
  * <p>逻辑运算符 - 所堂练习01</p>

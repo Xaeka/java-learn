@@ -1,4 +1,4 @@
-package com.github.xaeka.javalearn.chapter04;
+package com.github.xaeka.javalearn.chapter04.operator;
 
 /**
  * <p>逻辑运算符01 - 逻辑与& 跟 短路与&& 的使用</p>
