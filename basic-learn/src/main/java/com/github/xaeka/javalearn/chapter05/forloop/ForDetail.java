@@ -1,4 +1,4 @@
-package com.github.xaeka.javalearn.chapter05.forcycle;
+package com.github.xaeka.javalearn.chapter05.forloop;
 
 /**
  * <p>For 循环控制语句 细节</p>

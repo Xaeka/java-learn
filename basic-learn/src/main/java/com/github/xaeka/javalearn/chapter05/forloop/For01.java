@@ -1,4 +1,4 @@
-package com.github.xaeka.javalearn.chapter05.forcycle;
+package com.github.xaeka.javalearn.chapter05.forloop;
 
 import java.util.Scanner;
 

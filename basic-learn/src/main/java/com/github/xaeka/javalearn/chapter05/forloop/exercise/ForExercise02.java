@@ -1,4 +1,4 @@
-package com.github.xaeka.javalearn.chapter05.forcycle.exercise;
+package com.github.xaeka.javalearn.chapter05.forloop.exercise;
 
 /**
  * <p>for 循环 随堂练习 02</p>
