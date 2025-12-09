@@ -1,5 +1,7 @@
 package com.github.xaeka.javalearn.chapter05.nestedloop;
 
+import java.util.Scanner;
+
 /**
  * <p>多重循环控制 打印金字塔</p>
  *
@@ -97,6 +99,7 @@ public class Stars {
 
             // 内一层02 循环就需要判断第一个和最后一个的*所在位置了
             for (int starCount = 1; starCount <= row * 2 - 1; starCount++) {
+
                 // 要么是前置空格输出完之后的第一个，要么是最后一个，亦或者是最后一行，则输出*
                 if (starCount == 1 || starCount == row * 2 - 1 || row == 7) {
                     System.out.print("* ");
@@ -111,7 +114,8 @@ public class Stars {
 
         System.out.println("====================");
 
-        System.out.println("试着打印一个空心菱形~");
+        Scanner squreScanner = new Scanner(System.in);
+        System.out.print("请输入菱形的半高，我将试着打印一个空心菱形~  半高：");
         //             *                第  1 行 ->  1 个 * -> 6 个 空格 -> 中间  0 个 空格
         //           *   *              第  2 行 ->  2 个 * -> 5 个 空格 -> 中间  1 个 空格
         //         *       *            第  3 行 ->  2 个 * -> 4 个 空格 -> 中间  3 个 空格
@@ -119,11 +123,86 @@ public class Stars {
         //     *               *        第  5 行 ->  2 个 * -> 2 个 空格 -> 中间  7 个 空格
         //   *                   *      第  6 行 ->  2 个 * -> 1 个 空格 -> 中间  9 个 空格
         // *                       *    第  7 行 -> 13 个 * -> 0 个 空格 -> 中间 11 个 空格
-        //   *                   *      第  8 行 ->  2 个 * -> 1 个 空格 -> 中间  9 个 空格
-        //     *               *        第  9 行 ->  2 个 * -> 2 个 空格 -> 中间  7 个 空格
-        //       *           *          第 10 行 ->  2 个 * -> 3 个 空格 -> 中间  5 个 空格
-        //         *       *            第 11 行 ->  2 个 * -> 4 个 空格 -> 中间  3 个 空格
-        //           *   *              第 12 行 ->  2 个 * -> 5 个 空格 -> 中间  1 个 空格
-        //             *                第 13 行 ->  1 个 * -> 6 个 空格 -> 中间  0 个 空格
+        //   *                   *      第  8 行 ->  2 个 * -> 1 个 空格 -> 中间  9 个 空格 13 - 7 ? = 9 => 6 ? = 9  第 1 行 总第 8 行
+        //     *               *        第  9 行 ->  2 个 * -> 2 个 空格 -> 中间  7 个 空格 13 - 7 ? = 7 => 6 ? = 7  第 2 行 总第 9 行
+        //       *           *          第 10 行 ->  2 个 * -> 3 个 空格 -> 中间  5 个 空格 13 - 7 ? = 5 => 6 ? = 5  第 3 行 总第 10 行
+        //         *       *            第 11 行 ->  2 个 * -> 4 个 空格 -> 中间  3 个 空格 13 - 7 ? = 3 => 6 ? = 3  第 4 行 总第 11 行
+        //           *   *              第 12 行 ->  2 个 * -> 5 个 空格 -> 中间  1 个 空格 13 - 7 ? = 1 => 6 ? = 1  第 5 行 总第 12 行
+        //             *                第 13 行 ->  1 个 * -> 6 个 空格 -> 中间  0 个 空格 13 - 7 ? = 0 => 6 ? = 0  第 6 行 总第 13 行
+        // 首先，比较显而易见的是，一直到第七行我们都是可以通过实现空心金字塔的部分功能来实现
+        // 其次就是要探究一下后面的要怎么实现了
+        // 其实仔细观察可以发现，对于半总行数之后的规则要重新定义，可以得知?代表的表达式为
+        // int halfRow = 7;     // 定义变量表示半总行数
+        // int totalRow = 2 * halfRow - 1;   // 定义变量表示总行数
+        // for (int row = 1; row <= totalRow; row++) {
+        //     // 如果行数小于等于半总行数，那么就执行 空心金字塔 部分
+        //     if (row <= halfRow) {
+        //         // 先是执行前置空格
+        //         for (int spaceCount = 1; spaceCount <= halfRow - row; spaceCount++) {
+        //             System.out.print("  ");
+        //         }
+        //         // 再执行第一个 * 和最后一个*
+        //         for (int starCount = 1; starCount <= row * 2 - 1; starCount++) {
+        //             if (starCount == 1 || starCount == row * 2 - 1) {
+        //                 System.out.print("* ");
+        //             } else {
+        //                 System.out.print("  ");
+        //             }
+        //         }
+        //         // 如果行数大于半总行数，那么就执行 倒空心金字塔 部分
+        //     } else {
+        //         // 同样先是执行空格（这里我自己推断，感觉是当前行数 - 半总行数 = 前置空格数）, 只不过是从半总行数后开始计数空格
+        //         for (int spaceCount = halfRow; spaceCount <= row - halfRow ; spaceCount++) {
+        //             System.out.println("  ");
+        //         }
+        //         // 此时再执行第一个 * 和 最后一个 *
+        //         for (int starCount = halfRow; starCount <= row - halfRow; starCount++) {
+        //             // 如果符合第一个和最后一个，则输出 *
+        //             if (starCount == row - halfRow || starCount == row - 1) {
+        //
+        //             }
+        //         }
+        //     }
+        //     // 每次循环执行完一行都要记得换行
+        //     System.out.println();
+        // }
+
+        int halfRow = squreScanner.nextInt();   // 半行数（上半部分的行数）
+        if (halfRow <= 1) {
+            System.out.println("请输入大于1的整数！");
+        } else {
+            System.out.println("已录入半高：" + halfRow + "菱形图案如下：");
+            int totalRow = 2 * halfRow - 1;  // 总行数
+            for (int row = 1; row <= totalRow; row++) {
+
+                // 1. 计算当前行的“镜像行号”（统一上/下半部分的逻辑）
+                int mirrorRow; // 镜像行号（和上半部分某行对称）
+                if (row <= halfRow) {
+                    mirrorRow = row; // 上半部分：镜像行就是自己
+                } else {
+                    mirrorRow = 2 * halfRow - row; // 下半部分：镜像行=2×7 - row
+                }
+
+                // 2. 打印前置空格（上/下半部分通用）
+                // 规律：前置空格数 = halfRow - mirrorRow（和上半部分完全一致）
+                for (int spaceCount = 1; spaceCount <= halfRow - mirrorRow; spaceCount++) {
+                    System.out.print("  "); // 注意：用print（不换行），之前你用了println导致换行错误
+                }
+
+                // 3. 打印星号和中间空格（上/下半部分通用）
+                int totalPos = 2 * mirrorRow - 1; // 当前行的总位置数（和镜像行一致）
+                for (int starCount = 1; starCount <= totalPos; starCount++) {
+                    // 星号只在首尾位置（保证空心）
+                    if (starCount == 1 || starCount == totalPos) {
+                        System.out.print("* ");
+                    } else {
+                        System.out.print("  "); // 中间用双空格填充
+                    }
+                }
+
+                // 4. 每行结束后换行
+                System.out.println();
+            }
+        }
     }
 }
