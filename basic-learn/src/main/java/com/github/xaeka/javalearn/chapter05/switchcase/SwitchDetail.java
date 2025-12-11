@@ -18,7 +18,7 @@ package com.github.xaeka.javalearn.chapter05.switchcase;
 
 public class SwitchDetail {
     public static void main(String[] args) {
-        // doublec = 1.1;
+        // double c = 1.1;
         // switch (c) { // 这是错误的
         //     case 1.1:    // 这也是错误的，必须使用相关的内容添加才能使用
         //         System.out.println("double kill!");
