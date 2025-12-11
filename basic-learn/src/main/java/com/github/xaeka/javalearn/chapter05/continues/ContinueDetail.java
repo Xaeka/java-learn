@@ -19,7 +19,7 @@ public class ContinueDetail {
             label02:
             for (int i = 0; i < 10; i++) {
                 if (i == 2) {
-                    // 下列注释分别取消，看看鸽子会输出什么值
+                    // 下列注释分别取消，看看各自会输出什么值
                     // continue;
                     continue label02;
                     // i = 0
