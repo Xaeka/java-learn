@@ -10,6 +10,7 @@ import java.util.Arrays;
  *   <li>② 使用for循环将目标数组的元素值按照对应的下标（索引）逐个填入当前数组的元素值中</li>
  *   <li>③ 此时进行修改当前数组的元素值，就不会将原本的目标数组元素值发生改变了</li>
  *   <li>④ 究其本质就是开辟大小相同的新空间、存储相同元素</li>
+ *   <img src="ArrayCopy.png" alt="数组拷贝 图解"/>
  * </ul>
  *
  * @author Xaeka

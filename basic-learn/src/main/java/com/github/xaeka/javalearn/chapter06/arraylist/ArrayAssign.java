@@ -17,6 +17,7 @@ import java.util.Arrays;
  *   <li>② 也就是说，引用数据类型A和引用数据类型B共同使用这一个地址，若地址中的元素值变了，那么双方又是同样引用这个地址，</li>
  *   <li>③ 那么造成的结果就是双方所引用的地址中所对应的元素值都会改变<b>（本质上是在同一个内容基础上，复制一份地址使用，指向同一地址空间，休戚与共）</b></li>
  *   <li><b>※</b> 详情内存图见 <b>ArrayAssign.png</b></li>
+ *   <li><img src="ArrayAssign.png" alt="赋值机制图解"/></li>
  * </ul>
  *
  * @author Xaeka
